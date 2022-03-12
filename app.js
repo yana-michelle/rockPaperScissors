@@ -20,8 +20,13 @@ const game = () => {
 
         option.forEach(option => {
             option.addEventListener('click', function() {
-            const computerNumber = (Math.random()*3);
+            const computerNumber = Math.floor(Math.random() * 3);
             const computerChoice = computerOption[computerNumber];
+
+            computerHands(this.textContent, computerChoice);
+
+            playerHand.src = `./assets/${this.textContent}.png`;
+            computerChoice.src = `./assets/${computerChoice}.png`;
             
         });
     });
@@ -43,6 +48,15 @@ const game = () => {
 
         if(playerChoice === 'paper'){
             if(computerChoice === 'sciccors'){
+                winner.textContent = "Karen wins, which was expected tbh..."
+            }else{
+                winner.textContent = 'hey, look at that! you won!';
+                return;
+
+            }
+        }
+        if(playerChoice === 'scissors'){
+            if(computerChoice === 'rock'){
                 winner.textContent = "Karen wins, which was expected tbh..."
             }else{
                 winner.textContent = 'hey, look at that! you won!';
