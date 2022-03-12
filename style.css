@@ -41,7 +41,8 @@ section{
     font: 50px;
 }
 
-.intro button{
+.intro button,
+.match button {
     width: 150px;
     height: 50px;
     background: none;
@@ -50,6 +51,7 @@ section{
     font-size: 20px;
     background: rgb(8, 102, 119);
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .match{
@@ -67,5 +69,20 @@ section{
 
 .hands, .options{
     display: flex;
-    
+    justify-content: space-around;
+    align-items: center;
+}
+
+.playerhand{
+    transform: rotateY(180deg);
+}
+
+div.fadeout {
+    opacity: 0;
+    pointer-events: none;
+}
+
+div.fadein{
+    opacity: 1;
+    pointer-events: all;
 }
