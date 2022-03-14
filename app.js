@@ -8,7 +8,7 @@ const game = () => {
         const introScreen = document.querySelector(".intro");
         const match = documnet.querySelector(".match");
 
-        playBtn.addEventListener('click', () => {
+        playBtn.addEventListener("click", () => {
             introScreen.classList.add("fadeOut");
             match.classList.add("fadeIn");
         });
